@@ -22,19 +22,21 @@ body {
 }
 
 .container-difficults {
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
     padding: 20px;
+    /* margin: 0 auto; */
 }
 
 .difficulty {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aliceblue;
-    width: 70px;
-    height: 40px;
-    margin: auto 15px;
+    border: 2px solid aliceblue;
+    color: aliceblue;
+    width: 150px;
+    height: 30px;
+    margin: 10px 0;
     box-sizing: border-box;
     border-radius: 10px;
     text-align: center;
@@ -42,14 +44,11 @@ body {
     word-wrap: break-word;
 }
 
-.shuffle-button {
-    margin: 0 auto;
-}
 
 
 .ancient {
-    width: 200px;
-    height: 260px;
+    width: 260px;
+    height: 340px;
     background-size: contain;
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -64,18 +63,128 @@ body {
 }
 
 .active {
+    color: rgba(185, 43, 43, 0.8);
+    border: none;
     outline: 5px rgba(185, 43, 43, 0.8) solid;
 }
 
 .container-deck {
-    /* height: 40%; */
     margin: 0 auto;
 }
 
+.container-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-top: 2px solid aliceblue;
+}
+
 .shuffle-button {
-    height: 30px;
+    border: 3px solid rgba(185, 43, 43, 0.8);
+    color: aliceblue;
+    background-color: rgba(240, 248, 255, 0);
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    margin: 10px auto;
     border-radius: 10px;
-    outline: none;
-    border: none;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.shuffle-button {
+    appearance: none;
+    background-color: transparent;
+}
+
+.shuffle-button:hover,
+.shuffle-button:focus {
+    color: #fff;
+    outline: 0;
+}
+
+.shuffle-button {
+    -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.shuffle-button:hover {
+    box-shadow: 0 0 40px 40px rgba(185, 43, 43, 0.8) inset;
+}
+
+
+.container-deck {
+    width: 100%;
+
+}
+
+.description {
+    display: flex;
+    padding: 20px;
+}
+
+.difficult-description {
+    padding: 10px;
+    background-color: aliceblue;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 0 auto;
+
+}
+
+.dots-container {
+    display: flex;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.green {
+    background-color: rgb(17, 153, 17);
+}
+
+.brown {
+    background-color: brown;
+}
+
+.blue {
+    background-color: rgb(73, 73, 247);
+}
+
+.stage-text {
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.deck {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.cards {
+    display: flex;
+}
+
+.taro {
+    width: 200px;
+    height: 100%;
+    margin: 0 15px;
+    background-size: contain;
+}
+
+.unknown-card {
+    background-repeat: no-repeat;
+    /* background-size: cover; */
     cursor: pointer;
 }
