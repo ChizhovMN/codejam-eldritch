@@ -125,7 +125,7 @@ const brownCards = [];
 
 function decks(arr, cardsNumber, colorDeck) {
     for (let i = 1; i <= cardsNumber; i++) {
-        arr.push(`./assets/mythicCards/${colorDeck}/${colorDeck}${i}.jpg`)
+        arr.push(`./assets/MythicCards/${colorDeck}/${colorDeck}${i}.jpg`)
     }
     return arr;
 }
@@ -263,77 +263,77 @@ let stackOfGreen, stackOfBrown, StackOfBlue;
 
 let stackOfFirstStage, stackOfSecondStage, stackOfThirdStage;
 const uniqSnow = {
-    './assets/mythicCards/green/green1.jpg': '',
-    './assets/mythicCards/green/green12.jpg': '',
-    './assets/mythicCards/green/green16.jpg': '',
-    './assets/mythicCards/green/green17.jpg': '',
-    './assets/mythicCards/green/green18.jpg': '',
-    './assets/mythicCards/brown/brown11.jpg': '',
-    './assets/mythicCards/brown/brown12.jpg': '',
-    './assets/mythicCards/brown/brown13.jpg': '',
-    './assets/mythicCards/brown/brown14.jpg': '',
-    './assets/mythicCards/brown/brown21.jpg': '',
-    './assets/mythicCards/blue/blue3.jpg': '',
-    './assets/mythicCards/blue/blue4.jpg': '',
-    './assets/mythicCards/blue/blue5.jpg': '',
-    './assets/mythicCards/blue/blue10.jpg': '',
+    './assets/MythicCards/green/green1.jpg': '',
+    './assets/MythicCards/green/green12.jpg': '',
+    './assets/MythicCards/green/green16.jpg': '',
+    './assets/MythicCards/green/green17.jpg': '',
+    './assets/MythicCards/green/green18.jpg': '',
+    './assets/MythicCards/brown/brown11.jpg': '',
+    './assets/MythicCards/brown/brown12.jpg': '',
+    './assets/MythicCards/brown/brown13.jpg': '',
+    './assets/MythicCards/brown/brown14.jpg': '',
+    './assets/MythicCards/brown/brown21.jpg': '',
+    './assets/MythicCards/blue/blue3.jpg': '',
+    './assets/MythicCards/blue/blue4.jpg': '',
+    './assets/MythicCards/blue/blue5.jpg': '',
+    './assets/MythicCards/blue/blue10.jpg': '',
 }
 const uniqOctupus = {
-    './assets/mythicCards/green/green2.jpg': '',
-    './assets/mythicCards/green/green3.jpg': '',
-    './assets/mythicCards/green/green4.jpg': '',
-    './assets/mythicCards/green/green5.jpg': '',
-    './assets/mythicCards/green/green6.jpg': '',
-    './assets/mythicCards/brown/brown6.jpg': '',
-    './assets/mythicCards/brown/brown7.jpg': '',
-    './assets/mythicCards/brown/brown8.jpg': '',
-    './assets/mythicCards/brown/brown9.jpg': '',
-    './assets/mythicCards/brown/brown10.jpg': '',
-    './assets/mythicCards/blue/blue1.jpg': '',
-    './assets/mythicCards/blue/blue2.jpg': '',
-    './assets/mythicCards/blue/blue6.jpg': '',
-    './assets/mythicCards/blue/blue8.jpg': '',
+    './assets/MythicCards/green/green2.jpg': '',
+    './assets/MythicCards/green/green3.jpg': '',
+    './assets/MythicCards/green/green4.jpg': '',
+    './assets/MythicCards/green/green5.jpg': '',
+    './assets/MythicCards/green/green6.jpg': '',
+    './assets/MythicCards/brown/brown6.jpg': '',
+    './assets/MythicCards/brown/brown7.jpg': '',
+    './assets/MythicCards/brown/brown8.jpg': '',
+    './assets/MythicCards/brown/brown9.jpg': '',
+    './assets/MythicCards/brown/brown10.jpg': '',
+    './assets/MythicCards/blue/blue1.jpg': '',
+    './assets/MythicCards/blue/blue2.jpg': '',
+    './assets/MythicCards/blue/blue6.jpg': '',
+    './assets/MythicCards/blue/blue8.jpg': '',
 }
 const uniqGreenSnow = {
-    './assets/mythicCards/green/green1.jpg': '',
-    './assets/mythicCards/green/green12.jpg': '',
-    './assets/mythicCards/green/green16.jpg': '',
-    './assets/mythicCards/green/green17.jpg': '',
-    './assets/mythicCards/green/green18.jpg': '',
+    './assets/MythicCards/green/green1.jpg': '',
+    './assets/MythicCards/green/green12.jpg': '',
+    './assets/MythicCards/green/green16.jpg': '',
+    './assets/MythicCards/green/green17.jpg': '',
+    './assets/MythicCards/green/green18.jpg': '',
 },
     uniqBrownSnow = {
-        './assets/mythicCards/brown/brown11.jpg': '',
-        './assets/mythicCards/brown/brown12.jpg': '',
-        './assets/mythicCards/brown/brown13.jpg': '',
-        './assets/mythicCards/brown/brown14.jpg': '',
-        './assets/mythicCards/brown/brown21.jpg': '',
+        './assets/MythicCards/brown/brown11.jpg': '',
+        './assets/MythicCards/brown/brown12.jpg': '',
+        './assets/MythicCards/brown/brown13.jpg': '',
+        './assets/MythicCards/brown/brown14.jpg': '',
+        './assets/MythicCards/brown/brown21.jpg': '',
     },
     uniqBLueSnow = {
-        './assets/mythicCards/blue/blue3.jpg': '',
-        './assets/mythicCards/blue/blue4.jpg': '',
-        './assets/mythicCards/blue/blue5.jpg': '',
-        './assets/mythicCards/blue/blue10.jpg': '',
+        './assets/MythicCards/blue/blue3.jpg': '',
+        './assets/MythicCards/blue/blue4.jpg': '',
+        './assets/MythicCards/blue/blue5.jpg': '',
+        './assets/MythicCards/blue/blue10.jpg': '',
     };
 
 const uniqGreenOctupus = {
-    './assets/mythicCards/green/green2.jpg': '',
-    './assets/mythicCards/green/green3.jpg': '',
-    './assets/mythicCards/green/green4.jpg': '',
-    './assets/mythicCards/green/green5.jpg': '',
-    './assets/mythicCards/green/green6.jpg': '',
+    './assets/MythicCards/green/green2.jpg': '',
+    './assets/MythicCards/green/green3.jpg': '',
+    './assets/MythicCards/green/green4.jpg': '',
+    './assets/MythicCards/green/green5.jpg': '',
+    './assets/MythicCards/green/green6.jpg': '',
 },
     uniqBrownOctupus = {
-        './assets/mythicCards/brown/brown6.jpg': '',
-        './assets/mythicCards/brown/brown7.jpg': '',
-        './assets/mythicCards/brown/brown8.jpg': '',
-        './assets/mythicCards/brown/brown9.jpg': '',
-        './assets/mythicCards/brown/brown10.jpg': '',
+        './assets/MythicCards/brown/brown6.jpg': '',
+        './assets/MythicCards/brown/brown7.jpg': '',
+        './assets/MythicCards/brown/brown8.jpg': '',
+        './assets/MythicCards/brown/brown9.jpg': '',
+        './assets/MythicCards/brown/brown10.jpg': '',
     },
     uniqBlueOctupus = {
-        './assets/mythicCards/blue/blue1.jpg': '',
-        './assets/mythicCards/blue/blue2.jpg': '',
-        './assets/mythicCards/blue/blue6.jpg': '',
-        './assets/mythicCards/blue/blue8.jpg': '',
+        './assets/MythicCards/blue/blue1.jpg': '',
+        './assets/MythicCards/blue/blue2.jpg': '',
+        './assets/MythicCards/blue/blue6.jpg': '',
+        './assets/MythicCards/blue/blue8.jpg': '',
     }
 
 function random(min, max) {
@@ -382,11 +382,11 @@ function veryEasyDeck() {
     if (stackOfGreenCards.length < sumOfGreenCards) {
         while (stackOfGreenCards.length < sumOfGreenCards) {
             let randomGreen = random(1, greenCards.length);
-            if (`./assets/mythicCards/green/green${randomGreen}.jpg` in copyUniqGreenOctupus || `./assets/mythicCards/green/green${randomGreen}.jpg` in uniqGreenSnow) {
+            if (`./assets/MythicCards/green/green${randomGreen}.jpg` in copyUniqGreenOctupus || `./assets/MythicCards/green/green${randomGreen}.jpg` in uniqGreenSnow) {
                 continue
             } else {
-                stackOfGreenCards.push(`./assets/mythicCards/green/green${randomGreen}.jpg`)
-                copyUniqGreenOctupus[`./assets/mythicCards/green/green${randomGreen}.jpg`] = '';
+                stackOfGreenCards.push(`./assets/MythicCards/green/green${randomGreen}.jpg`)
+                copyUniqGreenOctupus[`./assets/MythicCards/green/green${randomGreen}.jpg`] = '';
             }
         }
     }
@@ -404,11 +404,11 @@ function veryEasyDeck() {
     if (stackOfBrownCards.length < sumOfBrownCards) {
         while (stackOfBrownCards.length < sumOfBrownCards) {
             let randomBrown = random(1, brownCards.length);
-            if (`./assets/mythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownOctupus || `./assets/mythicCards/brown/brown${randomBrown}.jpg` in uniqBrownSnow) {
+            if (`./assets/MythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownOctupus || `./assets/MythicCards/brown/brown${randomBrown}.jpg` in uniqBrownSnow) {
                 continue
             } else {
-                stackOfBrownCards.push(`./assets/mythicCards/brown/brown${randomBrown}.jpg`)
-                copyUniqBrownOctupus[`./assets/mythicCards/brown/brown${randomBrown}.jpg`] = '';
+                stackOfBrownCards.push(`./assets/MythicCards/brown/brown${randomBrown}.jpg`)
+                copyUniqBrownOctupus[`./assets/MythicCards/brown/brown${randomBrown}.jpg`] = '';
             }
         }
     } else {
@@ -425,11 +425,11 @@ function veryEasyDeck() {
     if (stackOfBlueCards.length < sumOfBlueCards) {
         while (stackOfBlueCards.length < sumOfBlueCards) {
             let randomBlue = random(1, blueCards.length);
-            if (`./assets/mythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueOctupus || `./assets/mythicCards/blue/blue${randomBlue}.jpg` in uniqBLueSnow) {
+            if (`./assets/MythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueOctupus || `./assets/MythicCards/blue/blue${randomBlue}.jpg` in uniqBLueSnow) {
                 continue
             } else {
-                stackOfBlueCards.push(`./assets/mythicCards/blue/blue${randomBlue}.jpg`)
-                copyUniqBlueOctupus[`./assets/mythicCards/blue/blue${randomBlue}.jpg`] = '';
+                stackOfBlueCards.push(`./assets/MythicCards/blue/blue${randomBlue}.jpg`)
+                copyUniqBlueOctupus[`./assets/MythicCards/blue/blue${randomBlue}.jpg`] = '';
             }
         }
     } else {
@@ -453,31 +453,31 @@ function easyDeck() {
 
     while (stackOfGreenCards.length < sumOfGreenCards) {
         let randomGreen = random(1, greenCards.length);
-        if (`./assets/mythicCards/green/green${randomGreen}.jpg` in copyUniqGreenOctupus) {
+        if (`./assets/MythicCards/green/green${randomGreen}.jpg` in copyUniqGreenOctupus) {
             continue
         } else {
-            stackOfGreenCards.push(`./assets/mythicCards/green/green${randomGreen}.jpg`)
-            copyUniqGreenOctupus[`./assets/mythicCards/green/green${randomGreen}.jpg`] = '';
+            stackOfGreenCards.push(`./assets/MythicCards/green/green${randomGreen}.jpg`)
+            copyUniqGreenOctupus[`./assets/MythicCards/green/green${randomGreen}.jpg`] = '';
         }
     }
     while (stackOfBrownCards.length < sumOfBrownCards) {
         let randomBrown = random(1, brownCards.length);
 
-        if (`./assets/mythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownOctupus) {
+        if (`./assets/MythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownOctupus) {
             continue
         } else {
-            stackOfBrownCards.push(`./assets/mythicCards/brown/brown${randomBrown}.jpg`)
-            copyUniqBrownOctupus[`./assets/mythicCards/brown/brown${randomBrown}.jpg`] = '';
+            stackOfBrownCards.push(`./assets/MythicCards/brown/brown${randomBrown}.jpg`)
+            copyUniqBrownOctupus[`./assets/MythicCards/brown/brown${randomBrown}.jpg`] = '';
         }
     }
     while (stackOfBlueCards.length < sumOfBlueCards) {
         let randomBlue = random(1, blueCards.length);
 
-        if (`./assets/mythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueOctupus) {
+        if (`./assets/MythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueOctupus) {
             continue
         } else {
-            stackOfBlueCards.push(`./assets/mythicCards/blue/blue${randomBlue}.jpg`)
-            copyUniqBlueOctupus[`./assets/mythicCards/blue/blue${randomBlue}.jpg`] = '';
+            stackOfBlueCards.push(`./assets/MythicCards/blue/blue${randomBlue}.jpg`)
+            copyUniqBlueOctupus[`./assets/MythicCards/blue/blue${randomBlue}.jpg`] = '';
         }
     }
 }
@@ -492,31 +492,31 @@ function normalDeck() {
 
     while (stackOfGreenCards.length < sumOfGreenCards) {
         let randomGreen = random(1, greenCards.length);
-        if (`./assets/mythicCards/green/green${randomGreen}.jpg` in uniqGreen) {
+        if (`./assets/MythicCards/green/green${randomGreen}.jpg` in uniqGreen) {
             continue
         } else {
-            stackOfGreenCards.push(`./assets/mythicCards/green/green${randomGreen}.jpg`)
-            uniqGreen[`./assets/mythicCards/green/green${randomGreen}.jpg`] = '';
+            stackOfGreenCards.push(`./assets/MythicCards/green/green${randomGreen}.jpg`)
+            uniqGreen[`./assets/MythicCards/green/green${randomGreen}.jpg`] = '';
         }
     }
     while (stackOfBrownCards.length < sumOfBrownCards) {
         let randomBrown = random(1, brownCards.length);
 
-        if (`./assets/mythicCards/brown/brown${randomBrown}.jpg` in uniqBrown) {
+        if (`./assets/MythicCards/brown/brown${randomBrown}.jpg` in uniqBrown) {
             continue
         } else {
-            stackOfBrownCards.push(`./assets/mythicCards/brown/brown${randomBrown}.jpg`)
-            uniqBrown[`./assets/mythicCards/brown/brown${randomBrown}.jpg`] = '';
+            stackOfBrownCards.push(`./assets/MythicCards/brown/brown${randomBrown}.jpg`)
+            uniqBrown[`./assets/MythicCards/brown/brown${randomBrown}.jpg`] = '';
         }
     }
     while (stackOfBlueCards.length < sumOfBlueCards) {
         let randomBlue = random(1, blueCards.length);
 
-        if (`./assets/mythicCards/blue/blue${randomBlue}.jpg` in uniqBLue) {
+        if (`./assets/MythicCards/blue/blue${randomBlue}.jpg` in uniqBLue) {
             continue
         } else {
-            stackOfBlueCards.push(`./assets/mythicCards/blue/blue${randomBlue}.jpg`)
-            uniqBLue[`./assets/mythicCards/blue/blue${randomBlue}.jpg`] = '';
+            stackOfBlueCards.push(`./assets/MythicCards/blue/blue${randomBlue}.jpg`)
+            uniqBLue[`./assets/MythicCards/blue/blue${randomBlue}.jpg`] = '';
         }
     }
 }
@@ -535,31 +535,31 @@ function highDeck() {
 
     while (stackOfGreenCards.length < sumOfGreenCards) {
         let randomGreen = random(1, greenCards.length);
-        if (`./assets/mythicCards/green/green${randomGreen}.jpg` in copyUniqGreenSnow) {
+        if (`./assets/MythicCards/green/green${randomGreen}.jpg` in copyUniqGreenSnow) {
             continue
         } else {
-            stackOfGreenCards.push(`./assets/mythicCards/green/green${randomGreen}.jpg`)
-            copyUniqGreenSnow[`./assets/mythicCards/green/green${randomGreen}.jpg`] = '';
+            stackOfGreenCards.push(`./assets/MythicCards/green/green${randomGreen}.jpg`)
+            copyUniqGreenSnow[`./assets/MythicCards/green/green${randomGreen}.jpg`] = '';
         }
     }
     while (stackOfBrownCards.length < sumOfBrownCards) {
         let randomBrown = random(1, brownCards.length);
 
-        if (`./assets/mythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownSnow) {
+        if (`./assets/MythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownSnow) {
             continue
         } else {
-            stackOfBrownCards.push(`./assets/mythicCards/brown/brown${randomBrown}.jpg`)
-            copyUniqBrownSnow[`./assets/mythicCards/brown/brown${randomBrown}.jpg`] = '';
+            stackOfBrownCards.push(`./assets/MythicCards/brown/brown${randomBrown}.jpg`)
+            copyUniqBrownSnow[`./assets/MythicCards/brown/brown${randomBrown}.jpg`] = '';
         }
     }
     while (stackOfBlueCards.length < sumOfBlueCards) {
         let randomBlue = random(1, blueCards.length);
 
-        if (`./assets/mythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueSnow) {
+        if (`./assets/MythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueSnow) {
             continue
         } else {
-            stackOfBlueCards.push(`./assets/mythicCards/blue/blue${randomBlue}.jpg`)
-            copyUniqBlueSnow[`./assets/mythicCards/blue/blue${randomBlue}.jpg`] = '';
+            stackOfBlueCards.push(`./assets/MythicCards/blue/blue${randomBlue}.jpg`)
+            copyUniqBlueSnow[`./assets/MythicCards/blue/blue${randomBlue}.jpg`] = '';
         }
     }
 }
@@ -580,11 +580,11 @@ function insaneDeck() {
     if (stackOfGreenCards.length < sumOfGreenCards) {
         while (stackOfGreenCards.length < sumOfGreenCards) {
             let randomGreen = random(1, greenCards.length);
-            if (`./assets/mythicCards/green/green${randomGreen}.jpg` in uniqGreenOctupus || `./assets/mythicCards/green/green${randomGreen}.jpg` in copyUniqGreenSnow) {
+            if (`./assets/MythicCards/green/green${randomGreen}.jpg` in uniqGreenOctupus || `./assets/MythicCards/green/green${randomGreen}.jpg` in copyUniqGreenSnow) {
                 continue
             } else {
-                stackOfGreenCards.push(`./assets/mythicCards/green/green${randomGreen}.jpg`)
-                copyUniqGreenSnow[`./assets/mythicCards/green/green${randomGreen}.jpg`] = '';
+                stackOfGreenCards.push(`./assets/MythicCards/green/green${randomGreen}.jpg`)
+                copyUniqGreenSnow[`./assets/MythicCards/green/green${randomGreen}.jpg`] = '';
             }
         }
     }
@@ -602,11 +602,11 @@ function insaneDeck() {
     if (stackOfBrownCards.length < sumOfBrownCards) {
         while (stackOfBrownCards.length < sumOfBrownCards) {
             let randomBrown = random(1, brownCards.length);
-            if (`./assets/mythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownSnow || `./assets/mythicCards/brown/brown${randomBrown}.jpg` in uniqBrownOctupus) {
+            if (`./assets/MythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownSnow || `./assets/MythicCards/brown/brown${randomBrown}.jpg` in uniqBrownOctupus) {
                 continue
             } else {
-                stackOfBrownCards.push(`./assets/mythicCards/brown/brown${randomBrown}.jpg`)
-                copyUniqBrownSnow[`./assets/mythicCards/brown/brown${randomBrown}.jpg`] = '';
+                stackOfBrownCards.push(`./assets/MythicCards/brown/brown${randomBrown}.jpg`)
+                copyUniqBrownSnow[`./assets/MythicCards/brown/brown${randomBrown}.jpg`] = '';
             }
         }
     } else {
@@ -623,11 +623,11 @@ function insaneDeck() {
     if (stackOfBlueCards.length < sumOfBlueCards) {
         while (stackOfBlueCards.length < sumOfBlueCards) {
             let randomBlue = random(1, blueCards.length);
-            if (`./assets/mythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueSnow || `./assets/mythicCards/blue/blue${randomBlue}.jpg` in uniqBlueOctupus) {
+            if (`./assets/MythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueSnow || `./assets/MythicCards/blue/blue${randomBlue}.jpg` in uniqBlueOctupus) {
                 continue
             } else {
-                stackOfBlueCards.push(`./assets/mythicCards/blue/blue${randomBlue}.jpg`)
-                copyUniqBlueSnow[`./assets/mythicCards/blue/blue${randomBlue}.jpg`] = '';
+                stackOfBlueCards.push(`./assets/MythicCards/blue/blue${randomBlue}.jpg`)
+                copyUniqBlueSnow[`./assets/MythicCards/blue/blue${randomBlue}.jpg`] = '';
             }
         }
     } else {
