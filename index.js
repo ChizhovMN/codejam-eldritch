@@ -207,7 +207,6 @@ function selectedAncient() {
             isAncient = false;
         }
     }
-    // mixDeck(ancientId);
     return isAncient;
 }
 
@@ -260,18 +259,227 @@ const lastCard = document.querySelector('.last-card');
 
 let stackOfGreenCards, stackOfBrownCards, stackOfBlueCards;
 
-let stackOfFirstStage, stackOfSecondStage, stackOfThirdStage;
+let stackOfGreen, stackOfBrown, StackOfBlue;
 
+let stackOfFirstStage, stackOfSecondStage, stackOfThirdStage;
+const uniqSnow = {
+    './assets/mythicCards/green/green1.jpg': '',
+    './assets/mythicCards/green/green12.jpg': '',
+    './assets/mythicCards/green/green16.jpg': '',
+    './assets/mythicCards/green/green17.jpg': '',
+    './assets/mythicCards/green/green18.jpg': '',
+    './assets/mythicCards/brown/brown11.jpg': '',
+    './assets/mythicCards/brown/brown12.jpg': '',
+    './assets/mythicCards/brown/brown13.jpg': '',
+    './assets/mythicCards/brown/brown14.jpg': '',
+    './assets/mythicCards/brown/brown21.jpg': '',
+    './assets/mythicCards/blue/blue3.jpg': '',
+    './assets/mythicCards/blue/blue4.jpg': '',
+    './assets/mythicCards/blue/blue5.jpg': '',
+    './assets/mythicCards/blue/blue10.jpg': '',
+}
+const uniqOctupus = {
+    './assets/mythicCards/green/green2.jpg': '',
+    './assets/mythicCards/green/green3.jpg': '',
+    './assets/mythicCards/green/green4.jpg': '',
+    './assets/mythicCards/green/green5.jpg': '',
+    './assets/mythicCards/green/green6.jpg': '',
+    './assets/mythicCards/brown/brown6.jpg': '',
+    './assets/mythicCards/brown/brown7.jpg': '',
+    './assets/mythicCards/brown/brown8.jpg': '',
+    './assets/mythicCards/brown/brown9.jpg': '',
+    './assets/mythicCards/brown/brown10.jpg': '',
+    './assets/mythicCards/blue/blue1.jpg': '',
+    './assets/mythicCards/blue/blue2.jpg': '',
+    './assets/mythicCards/blue/blue6.jpg': '',
+    './assets/mythicCards/blue/blue8.jpg': '',
+}
+const uniqGreenSnow = {
+    './assets/mythicCards/green/green1.jpg': '',
+    './assets/mythicCards/green/green12.jpg': '',
+    './assets/mythicCards/green/green16.jpg': '',
+    './assets/mythicCards/green/green17.jpg': '',
+    './assets/mythicCards/green/green18.jpg': '',
+},
+    uniqBrownSnow = {
+        './assets/mythicCards/brown/brown11.jpg': '',
+        './assets/mythicCards/brown/brown12.jpg': '',
+        './assets/mythicCards/brown/brown13.jpg': '',
+        './assets/mythicCards/brown/brown14.jpg': '',
+        './assets/mythicCards/brown/brown21.jpg': '',
+    },
+    uniqBLueSnow = {
+        './assets/mythicCards/blue/blue3.jpg': '',
+        './assets/mythicCards/blue/blue4.jpg': '',
+        './assets/mythicCards/blue/blue5.jpg': '',
+        './assets/mythicCards/blue/blue10.jpg': '',
+    };
+
+const uniqGreenOctupus = {
+    './assets/mythicCards/green/green2.jpg': '',
+    './assets/mythicCards/green/green3.jpg': '',
+    './assets/mythicCards/green/green4.jpg': '',
+    './assets/mythicCards/green/green5.jpg': '',
+    './assets/mythicCards/green/green6.jpg': '',
+},
+    uniqBrownOctupus = {
+        './assets/mythicCards/brown/brown6.jpg': '',
+        './assets/mythicCards/brown/brown7.jpg': '',
+        './assets/mythicCards/brown/brown8.jpg': '',
+        './assets/mythicCards/brown/brown9.jpg': '',
+        './assets/mythicCards/brown/brown10.jpg': '',
+    },
+    uniqBlueOctupus = {
+        './assets/mythicCards/blue/blue1.jpg': '',
+        './assets/mythicCards/blue/blue2.jpg': '',
+        './assets/mythicCards/blue/blue6.jpg': '',
+        './assets/mythicCards/blue/blue8.jpg': '',
+    }
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+function commonMixCards(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+function mixStages(arr, stage = '') {
+    arr = [];
+    for (let i = 1; i <= green[stage - 1]; i++) {
+        arr.push(stackOfGreenCards.splice(0, 1))
+    }
+    for (let i = 1; i <= brown[stage - 1]; i++) {
+        arr.push(stackOfBrownCards.splice(0, 1));
+    }
+    for (let i = 1; i <= blue[stage - 1]; i++) {
+        arr.push(stackOfBlueCards.splice(0, 1));
+    }
+    for (let i = arr.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr.flat();
+}
 
 function veryEasyDeck() {
+    const copyUniqGreenOctupus = Object.assign({}, uniqGreenOctupus);
+    const copyUniqBrownOctupus = Object.assign({}, uniqBrownOctupus);
+    const copyUniqBlueOctupus = Object.assign({}, uniqBlueOctupus);
+
+    stackOfGreenCards = [];
+    stackOfBrownCards = [];
+    stackOfBlueCards = [];
+
+    for (let keys in uniqGreenSnow) {
+        stackOfGreenCards.push(keys);
+    }
+    stackOfGreenCards = commonMixCards(stackOfGreenCards);
+
+    if (stackOfGreenCards.length < sumOfGreenCards) {
+        while (stackOfGreenCards.length < sumOfGreenCards) {
+            let randomGreen = random(1, greenCards.length);
+            if (`./assets/mythicCards/green/green${randomGreen}.jpg` in copyUniqGreenOctupus || `./assets/mythicCards/green/green${randomGreen}.jpg` in uniqGreenSnow) {
+                continue
+            } else {
+                stackOfGreenCards.push(`./assets/mythicCards/green/green${randomGreen}.jpg`)
+                copyUniqGreenOctupus[`./assets/mythicCards/green/green${randomGreen}.jpg`] = '';
+            }
+        }
+    }
+    else {
+        while (stackOfGreenCards.length != sumOfGreenCards) {
+            stackOfGreenCards.pop();
+        }
+    }
+
+    for (let keys in uniqBrownSnow) {
+        stackOfBrownCards.push(keys);
+    }
+    stackOfBrownCards = commonMixCards(stackOfBrownCards);
+
+    if (stackOfBrownCards.length < sumOfBrownCards) {
+        while (stackOfBrownCards.length < sumOfBrownCards) {
+            let randomBrown = random(1, brownCards.length);
+            if (`./assets/mythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownOctupus || `./assets/mythicCards/brown/brown${randomBrown}.jpg` in uniqBrownSnow) {
+                continue
+            } else {
+                stackOfBrownCards.push(`./assets/mythicCards/brown/brown${randomBrown}.jpg`)
+                copyUniqBrownOctupus[`./assets/mythicCards/brown/brown${randomBrown}.jpg`] = '';
+            }
+        }
+    } else {
+        while (stackOfBrownCards.length != sumOfBrownCards) {
+            stackOfBrownCards.pop();
+        }
+    }
+
+    for (let keys in uniqBLueSnow) {
+        stackOfBlueCards.push(keys);
+    }
+    stackOfBlueCards = commonMixCards(stackOfBlueCards);
+
+    if (stackOfBlueCards.length < sumOfBlueCards) {
+        while (stackOfBlueCards.length < sumOfBlueCards) {
+            let randomBlue = random(1, blueCards.length);
+            if (`./assets/mythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueOctupus || `./assets/mythicCards/blue/blue${randomBlue}.jpg` in uniqBLueSnow) {
+                continue
+            } else {
+                stackOfBlueCards.push(`./assets/mythicCards/blue/blue${randomBlue}.jpg`)
+                copyUniqBlueOctupus[`./assets/mythicCards/blue/blue${randomBlue}.jpg`] = '';
+            }
+        }
+    } else {
+        while (stackOfBlueCards.length != sumOfBlueCards) {
+            stackOfBlueCards.pop();
+        }
+    }
 
 }
-function easyDeck() {
 
+function easyDeck() {
+    const copyUniqGreenOctupus = Object.assign({}, uniqGreenOctupus);
+    const copyUniqBrownOctupus = Object.assign({}, uniqBrownOctupus);
+    const copyUniqBlueOctupus = Object.assign({}, uniqBlueOctupus);
+
+    stackOfGreenCards = [];
+    stackOfBrownCards = [];
+    stackOfBlueCards = [];
+
+
+
+    while (stackOfGreenCards.length < sumOfGreenCards) {
+        let randomGreen = random(1, greenCards.length);
+        if (`./assets/mythicCards/green/green${randomGreen}.jpg` in copyUniqGreenOctupus) {
+            continue
+        } else {
+            stackOfGreenCards.push(`./assets/mythicCards/green/green${randomGreen}.jpg`)
+            copyUniqGreenOctupus[`./assets/mythicCards/green/green${randomGreen}.jpg`] = '';
+        }
+    }
+    while (stackOfBrownCards.length < sumOfBrownCards) {
+        let randomBrown = random(1, brownCards.length);
+
+        if (`./assets/mythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownOctupus) {
+            continue
+        } else {
+            stackOfBrownCards.push(`./assets/mythicCards/brown/brown${randomBrown}.jpg`)
+            copyUniqBrownOctupus[`./assets/mythicCards/brown/brown${randomBrown}.jpg`] = '';
+        }
+    }
+    while (stackOfBlueCards.length < sumOfBlueCards) {
+        let randomBlue = random(1, blueCards.length);
+
+        if (`./assets/mythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueOctupus) {
+            continue
+        } else {
+            stackOfBlueCards.push(`./assets/mythicCards/blue/blue${randomBlue}.jpg`)
+            copyUniqBlueOctupus[`./assets/mythicCards/blue/blue${randomBlue}.jpg`] = '';
+        }
+    }
 }
 function normalDeck() {
     stackOfGreenCards = [];
@@ -316,29 +524,119 @@ function normalDeck() {
 
 
 function highDeck() {
+    const copyUniqGreenSnow = Object.assign({}, uniqGreenSnow);
+    const copyUniqBrownSnow = Object.assign({}, uniqBrownSnow);
+    const copyUniqBlueSnow = Object.assign({}, uniqBLueSnow);
 
+    stackOfGreenCards = [];
+    stackOfBrownCards = [];
+    stackOfBlueCards = [];
+
+
+    while (stackOfGreenCards.length < sumOfGreenCards) {
+        let randomGreen = random(1, greenCards.length);
+        if (`./assets/mythicCards/green/green${randomGreen}.jpg` in copyUniqGreenSnow) {
+            continue
+        } else {
+            stackOfGreenCards.push(`./assets/mythicCards/green/green${randomGreen}.jpg`)
+            copyUniqGreenSnow[`./assets/mythicCards/green/green${randomGreen}.jpg`] = '';
+        }
+    }
+    while (stackOfBrownCards.length < sumOfBrownCards) {
+        let randomBrown = random(1, brownCards.length);
+
+        if (`./assets/mythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownSnow) {
+            continue
+        } else {
+            stackOfBrownCards.push(`./assets/mythicCards/brown/brown${randomBrown}.jpg`)
+            copyUniqBrownSnow[`./assets/mythicCards/brown/brown${randomBrown}.jpg`] = '';
+        }
+    }
+    while (stackOfBlueCards.length < sumOfBlueCards) {
+        let randomBlue = random(1, blueCards.length);
+
+        if (`./assets/mythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueSnow) {
+            continue
+        } else {
+            stackOfBlueCards.push(`./assets/mythicCards/blue/blue${randomBlue}.jpg`)
+            copyUniqBlueSnow[`./assets/mythicCards/blue/blue${randomBlue}.jpg`] = '';
+        }
+    }
 }
 function insaneDeck() {
+    const copyUniqGreenSnow = Object.assign({}, uniqGreenSnow);
+    const copyUniqBrownSnow = Object.assign({}, uniqBrownSnow);
+    const copyUniqBlueSnow = Object.assign({}, uniqBLueSnow);
 
+    stackOfGreenCards = [];
+    stackOfBrownCards = [];
+    stackOfBlueCards = [];
+
+    for (let keys in uniqGreenOctupus) {
+        stackOfGreenCards.push(keys);
+    }
+    stackOfGreenCards = commonMixCards(stackOfGreenCards)
+
+    if (stackOfGreenCards.length < sumOfGreenCards) {
+        while (stackOfGreenCards.length < sumOfGreenCards) {
+            let randomGreen = random(1, greenCards.length);
+            if (`./assets/mythicCards/green/green${randomGreen}.jpg` in uniqGreenOctupus || `./assets/mythicCards/green/green${randomGreen}.jpg` in copyUniqGreenSnow) {
+                continue
+            } else {
+                stackOfGreenCards.push(`./assets/mythicCards/green/green${randomGreen}.jpg`)
+                copyUniqGreenSnow[`./assets/mythicCards/green/green${randomGreen}.jpg`] = '';
+            }
+        }
+    }
+    else {
+        while (stackOfGreenCards.length != sumOfGreenCards) {
+            stackOfGreenCards.pop();
+        }
+    }
+
+    for (let keys in uniqBrownOctupus) {
+        stackOfBrownCards.push(keys);
+    }
+    stackOfBrownCards = commonMixCards(stackOfBrownCards);
+
+    if (stackOfBrownCards.length < sumOfBrownCards) {
+        while (stackOfBrownCards.length < sumOfBrownCards) {
+            let randomBrown = random(1, brownCards.length);
+            if (`./assets/mythicCards/brown/brown${randomBrown}.jpg` in copyUniqBrownSnow || `./assets/mythicCards/brown/brown${randomBrown}.jpg` in uniqBrownOctupus) {
+                continue
+            } else {
+                stackOfBrownCards.push(`./assets/mythicCards/brown/brown${randomBrown}.jpg`)
+                copyUniqBrownSnow[`./assets/mythicCards/brown/brown${randomBrown}.jpg`] = '';
+            }
+        }
+    } else {
+        while (stackOfBrownCards.length != sumOfBrownCards) {
+            stackOfBrownCards.pop();
+        }
+    }
+
+    for (let keys in uniqBlueOctupus) {
+        stackOfBlueCards.push(keys);
+    }
+    stackOfBlueCards = commonMixCards(stackOfBlueCards);
+
+    if (stackOfBlueCards.length < sumOfBlueCards) {
+        while (stackOfBlueCards.length < sumOfBlueCards) {
+            let randomBlue = random(1, blueCards.length);
+            if (`./assets/mythicCards/blue/blue${randomBlue}.jpg` in copyUniqBlueSnow || `./assets/mythicCards/blue/blue${randomBlue}.jpg` in uniqBlueOctupus) {
+                continue
+            } else {
+                stackOfBlueCards.push(`./assets/mythicCards/blue/blue${randomBlue}.jpg`)
+                copyUniqBlueSnow[`./assets/mythicCards/blue/blue${randomBlue}.jpg`] = '';
+            }
+        }
+    } else {
+        while (stackOfBlueCards.length != sumOfBlueCards) {
+            stackOfBlueCards.pop();
+        }
+    }
 }
 
-function mixStages(arr, stage) {
-    arr = [];
-    for (let i = 1; i <= green[stage - 1]; i++) {
-        arr.push(stackOfGreenCards.splice(0, 1))
-    }
-    for (let i = 1; i <= brown[stage - 1]; i++) {
-        arr.push(stackOfBrownCards.splice(0, 1));
-    }
-    for (let i = 1; i <= blue[stage - 1]; i++) {
-        arr.push(stackOfBlueCards.splice(0, 1));
-    }
-    for (let i = arr.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr.flat();
-}
 
 shuffle.addEventListener('click', () => {
     if (!selectedAncient()) {
@@ -351,8 +649,23 @@ shuffle.addEventListener('click', () => {
         sumOfGreenCards = green.reduce((acc, item) => acc + item, 0);
         sumOfBrownCards = brown.reduce((acc, item) => acc + item, 0);
         sumOfBlueCards = blue.reduce((acc, item) => acc + item, 0);
-        console.log(sumOfGreenCards, sumOfBrownCards, sumOfBlueCards)
-        normalDeck();
+
+        let levelId;
+        for (let i = 0; i < difficults.length; i++) {
+            if (difficults[i].classList.contains('active')) {
+                levelId = difficults[i].id;
+                break
+            }
+        }
+        if (levelId === 'veryEasy') veryEasyDeck();
+        if (levelId === 'easy') easyDeck();
+        if (levelId === 'normal') normalDeck();
+        if (levelId === 'high') highDeck();
+        if (levelId === 'insane') insaneDeck();
+
+        stackOfGreen = commonMixCards(stackOfGreenCards);
+        stackOfBrown = commonMixCards(stackOfBrownCards);
+        stackOfBlue = commonMixCards(stackOfBlueCards);
 
         console.log('greenStack', stackOfGreenCards, 'brownStack', stackOfBrownCards, 'blueStack', stackOfBlueCards);
 
@@ -372,7 +685,9 @@ shuffle.addEventListener('click', () => {
             if (stage1.length > 0) {
 
                 OPENCARD = stage1.shift();
-                console.log('OPENCARD', OPENCARD);
+                OPENCARD in uniqSnow ? console.log(OPENCARD, 'easy') :
+                    OPENCARD in uniqOctupus ? console.log(OPENCARD, 'hard') :
+                        console.log(OPENCARD, 'normal');
                 lastCard.style.backgroundImage = `url('${OPENCARD}')`
 
                 if (OPENCARD.includes('green')) document.querySelectorAll('.green')[0].innerHTML -= 1;
@@ -382,7 +697,9 @@ shuffle.addEventListener('click', () => {
             } else if (stage2.length > 0) {
 
                 OPENCARD = stage2.shift();
-                console.log('OPENCARD', OPENCARD);
+                OPENCARD in uniqSnow ? console.log(OPENCARD, 'easy') :
+                    OPENCARD in uniqOctupus ? console.log(OPENCARD, 'hard') :
+                        console.log(OPENCARD, 'normal');
                 lastCard.style.backgroundImage = `url('${OPENCARD}')`;
 
                 if (OPENCARD.includes('green')) document.querySelectorAll('.green')[1].innerHTML -= 1;
@@ -390,7 +707,9 @@ shuffle.addEventListener('click', () => {
                 if (OPENCARD.includes('blue')) document.querySelectorAll('.blue')[1].innerHTML -= 1;
             } else if (stage3.length >= 0) {
                 OPENCARD = stage3.shift();
-                console.log('OPENCARD', OPENCARD);
+                OPENCARD in uniqSnow ? console.log(OPENCARD, 'easy') :
+                    OPENCARD in uniqOctupus ? console.log(OPENCARD, 'hard') :
+                        console.log(OPENCARD, 'normal');
                 lastCard.style.backgroundImage = `url('${OPENCARD}')`;
 
                 if (OPENCARD.includes('green')) document.querySelectorAll('.green')[2].innerHTML -= 1;
